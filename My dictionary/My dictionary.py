@@ -16,23 +16,7 @@ with open('pickle_1.txt','rb') as inp:
 
 
 
-def new_dict():
-    with open('part1.txt', 'r') as file:
-        # Считываем весь текст из файла
-        file_contents = file.read()
-    my_dict = {}
-    new_words = file_contents.split(';')
 
-    for item in new_words:
-        if len(item) > 5:
-            try:
-                item = item.strip()
-                pair = item.split()
-                my_dict[pair[0].strip()] = [pair[2].strip(), 0]
-            except Exception as e:
-                print(item, e)
-    with open('pickle_1.txt', 'wb') as out:
-        pickle.dump(my_dict, out)
 
 def add_to_repeat(a, b):
     with open('repeat.txt', 'a') as repeat:
